@@ -28,4 +28,12 @@ class Row
   def unknown_cells
     cells - known_cells
   end
+
+  def set_values(input)
+    input.chars.each_with_index do |value, index|
+      if value.to_i > 0
+        cells[index].value = value.to_i
+      end
+    end
+  end
 end
