@@ -28,12 +28,17 @@ class RowTest < Minitest::Test
     row = Row.new
     row.set_values("12 456 89")
 
-
     assert_equal 1, row.cells[0].value
     assert_equal 2, row.cells[1].value
     assert_equal 4, row.cells[3].value
     assert          row.cells[2].value.nil?
     assert          row.cells[6].value.nil?
+  end
+
+  def test_it_converts_to_a_string_representation
+    row = Row.new
+    row.set_values("12 456 89")
+    assert_equal "12 456 89", row.to_s
   end
 
 end

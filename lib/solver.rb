@@ -15,7 +15,7 @@ class Solver
 
   def generate_output(rows)
     rows.collect do |row|
-      row.cells.collect{|cell| cell.value}.join
+      row.to_s
     end.join("\n")
   end
 

@@ -36,4 +36,10 @@ class Row
       end
     end
   end
+
+  def to_s
+    cells.collect do |cell|
+      cell.value || " "
+    end.join
+  end
 end
